@@ -1,4 +1,4 @@
-package main
+package model
 
 type Notifier interface {
 	Send(message string)

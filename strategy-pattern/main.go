@@ -1,13 +1,20 @@
 package main
 
+import (
+	"strategy-pattern/model"
+	"strategy-pattern/service"
+)
+
 func main() {
-	emailService := NotificationService{
-		notifier: EmailNotification{},
-	}
+
+	emailService := service.NewNotificationService(
+		model.EmailNotification{},
+	)
+
 	emailService.SendNotification("Hello")
 
-	smsService := NotificationService{
-		notifier: SmsNotification{},
-	}
+	smsService := service.NewNotificationService(
+		model.SmsNotification{},
+	)
 	smsService.SendNotification("Hi")
 }
